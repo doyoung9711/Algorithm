@@ -10,18 +10,26 @@ public class BJ_2675 {
 	public static void main(String[] args) {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		try {
-			int m=0;
 			int N = Integer.parseInt(br.readLine());
-			String result = new String();
+			String[] result = new String[N];
 			for(int i=0;i<N;i++) {
 				StringTokenizer st = new StringTokenizer(br.readLine());
 				int x = Integer.parseInt(st.nextToken());
-				String ex = st.nextToken();
+				String ex = new String();
+				ex=st.nextToken();
+				result[i]="";
 				
+				for(int k=0;k<ex.length();k++) {
 				for(int j=0;j<x;j++) {
-					
+					result[i]=result[i]+ex.charAt(k);
 				}
 			}
+			}
+				
+			for(int i=0;i<N;i++) {
+				System.out.println(result[i]);
+			}
+			
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
